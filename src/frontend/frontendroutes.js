@@ -1,9 +1,8 @@
 import { Route } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"; // eslint-disable-line
 import FrontLayout from "./layout/FrontLayout";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
-import Contact from "./pages/Contact";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import AboutUsPage from "./pages/aboutus/AboutUs";
