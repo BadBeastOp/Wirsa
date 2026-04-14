@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   WIRSA — GLOBAL LIGHT THEME
+   ============================================================ */
+
+:root {
+  --red:        #E11C2A;
+  --red-dark:   #C91825;
+  --red-glow:   rgba(225, 28, 42, 0.15);
+  --bg-white:   #FFFFFF;
+  --bg-light:   #F5F5F5;
+  --bg-card:    #FFFFFF;
+  --bg-input:   #F8F8F8;
+  --border:     #E5E5E5;
+  --border-alt: #EAEAEA;
+  --text-dark:  #222222;
+  --text-body:  #444444;
+  --text-muted: #888888;
+  --text-light: #AAAAAA;
+}
+
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-white);
+  color: var(--text-body);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+
+a { color: var(--text-body); text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: var(--red); }
+
+img { display: block; max-width: 100%; }
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-light); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--red-dark); }
+
+/* ─── Section Layout ────────────────────────────────────────── */
+.wirsa-section {
+  padding: 80px 0;
+}
+.wirsa-section-alt {
+  padding: 80px 0;
+  background: var(--bg-light);
+}
+
+.wirsa-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Section Title ─────────────────────────────────────────── */
+.wirsa-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.wirsa-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--red);
+  border-radius: 2px;
+}
+
+.wirsa-section-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  margin-bottom: 48px;
+}
+
+/* ─── Buttons ───────────────────────────────────────────────── */
+.btn-wirsa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.btn-wirsa:hover {
+  background: var(--red-dark);
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px var(--red-glow);
+  color: #fff;
+}
+.btn-wirsa:active { transform: scale(0.98); }
+
+.btn-wirsa-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--red);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 10px 22px;
+  border: 1.5px solid var(--red);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-wirsa-outline:hover {
+  background: var(--red);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px var(--red-glow);
+}
+
+/* ─── Cards ─────────────────────────────────────────────────── */
+.wirsa-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-alt);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.wirsa-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  border-color: rgba(225,28,42,0.2);
+}
+
+/* Legacy */
+.wirsa-card-hover { transition: all 0.3s ease; }
+.wirsa-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ─── Inputs ────────────────────────────────────────────────── */
+.wirsa-input {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-dark);
+  font-family: 'Poppins', sans-serif;
+  padding: 12px 16px;
+  width: 100%;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.wirsa-input:focus { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-glow); }
+.wirsa-input::placeholder { color: var(--text-light); }
+
+/* ─── Swiper ────────────────────────────────────────────────── */
+.swiper-pagination { margin-top: 28px !important; position: relative !important; }
+.swiper-pagination-bullet { background: var(--red) !important; opacity: 0.3; width: 8px !important; height: 8px !important; }
+.swiper-pagination-bullet-active { background: var(--red) !important; opacity: 1; width: 24px !important; border-radius: 4px !important; }
+.swiper-button-next, .swiper-button-prev { color: var(--red) !important; }
+.swiper-button-next::after, .swiper-button-prev::after { font-size: 18px !important; }
+
+/* ─── Navbar ────────────────────────────────────────────────── */
+.navbar-scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.95) !important;
+}
+
+.nav-link { position: relative; padding-bottom: 4px; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--red);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ─── Category card ─────────────────────────────────────────── */
+.category-card { position: relative; overflow: hidden; }
+.category-card .cat-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(225,28,42,0.0);
+  transition: background 0.35s ease;
+  border-radius: 10px;
+}
+.category-card:hover .cat-overlay { background: rgba(225,28,42,0.08); }
+.category-card img { transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+.category-card:hover img { transform: scale(1.08); }
+
+/* ─── Product card image zoom ───────────────────────────────── */
+.product-img-wrap { overflow: hidden; }
+.product-img-wrap img { transition: transform 0.4s ease; }
+.wirsa-card:hover .product-img-wrap img,
+.wirsa-card-hover:hover .product-img-wrap img { transform: scale(1.07); }
+
+/* ─── Hero animations ───────────────────────────────────────── */
+.hero-fade-in { animation: heroFadeIn 0.8s cubic-bezier(0.4,0,0.2,1) both; }
+.hero-fade-in-delay { animation: heroFadeIn 0.8s 0.15s cubic-bezier(0.4,0,0.2,1) both; }
+.hero-fade-in-delay2 { animation: heroFadeIn 0.8s 0.3s cubic-bezier(0.4,0,0.2,1) both; }
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Scroll fade ───────────────────────────────────────────── */
+.scroll-fade { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-fade.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── Badge ─────────────────────────────────────────────────── */
+.wirsa-badge {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ─── Tag chip ──────────────────────────────────────────────── */
+.wirsa-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(225,28,42,0.08);
+  border: 1px solid rgba(225,28,42,0.2);
+  color: var(--red);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ─── Divider ───────────────────────────────────────────────── */
+.wirsa-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+
+/* ─── Feature bar ───────────────────────────────────────────── */
+.feature-bar-item { transition: all 0.3s ease; }
+.feature-bar-item:hover { background: rgba(225,28,42,0.04); }
+
+/* ─── Newsletter ────────────────────────────────────────────── */
+.newsletter-glow { box-shadow: 0 0 60px rgba(225,28,42,0.08); }
+
+/* ─── Deal pulse ────────────────────────────────────────────── */
+@keyframes pulseBorder {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(225,28,42,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(225,28,42,0); }
+}
+.deal-pill { animation: pulseBorder 2s infinite; }
+
+/* ─── Marquee ───────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 30s linear infinite; }
+
+/* ─── Utility animations ────────────────────────────────────── */
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fadeIn  { animation: fadeIn  0.4s ease both; }
+.animate-slideUp { animation: slideUp 0.35s ease both; }
+
+/* ─── Gradient text ─────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #E11C2A 0%, #ff6b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Smooth base transitions ───────────────────────────────── */
+button, a, input, select, textarea { transition: all 0.3s ease; }
+*:focus { outline: none; }
+
+/* ─── Line clamp ────────────────────────────────────────────── */
+.line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ─── Category grid responsive ─────────────────────────────────── */
+@media (max-width: 480px)  { .cat-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 10px !important; } }
+@media (min-width: 481px) and (max-width: 640px)  { .cat-grid { grid-template-columns: repeat(4, 1fr) !important; } }
+@media (min-width: 641px) and (max-width: 768px)  { .cat-grid { grid-template-columns: repeat(5, 1fr) !important; } }
+@media (min-width: 769px) and (max-width: 1024px) { .cat-grid { grid-template-columns: repeat(6, 1fr) !important; } }
+@media (min-width: 1025px) { .cat-grid { grid-template-columns: repeat(8, 1fr) !important; } }

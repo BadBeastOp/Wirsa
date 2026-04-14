@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 100" fill="none">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E11C2A" />
+      <stop offset="100%" stop-color="#C91825" />
+    </linearGradient>
+  </defs>
+  <!-- Simple crown mark -->
+  <path d="M14 54 L24 18 L34 54 L44 18 L54 54 L64 18 L74 54 L74 70 L14 70 Z" fill="url(#grad)" />
+  <!-- Brand text -->
+  <text x="90" y="56" font-family="Poppins, sans-serif" font-weight="800" font-size="44" fill="url(#grad)">WIRSA</text>
+  <!-- Tagline -->
+  <text x="90" y="84" font-family="Poppins, sans-serif" font-weight="500" font-size="14" fill="#444444">Indian Groceries &amp; Sweets</text>
+</svg>
